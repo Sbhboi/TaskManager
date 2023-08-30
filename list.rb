@@ -16,8 +16,8 @@ class List
     end
 
     def display_item
-        puts "Items: #{@item}"
-        @item.each do |item, index|
+        puts "Items:"
+        @item.each_with_index do |item, index|
             status = item.completed? ? "[x]" : "[ ]"
             if item.completed?
                 status = "[x]"
@@ -25,7 +25,7 @@ class List
                 status = "[ ]"
             end
         
-            # puts "#{index + 1} - #{status} - #{item.title}"
+            puts "#{index + 1} - #{status} - #{item.name}"
         end 
     end
 
